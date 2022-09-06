@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<!--Setting or configuration of website-->
+<head>
+  <meta charset="UTF-8">
+  <title>Josh Ferkins</title>
+  <meta name="viewport" content="width=device-width, initial-scale: 1.0">
+
+  <!--Link HTML document to CSS stylesheet-->
+  <link rel="stylesheet" style="text/css" href="CSS/style.css">
+  <!--Link to Boostrap enabling it on this website page-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+
+<!--Everything visible on the browser-->
+<body>
+  <header>
+
+    <!--Horizontal Navbar-->
+    <nav>
+      <div class="flexbox-mainNav-container">
+        <div class="head-1">
+          <img src="media/global.png" alt="logo" class="logoNav">
+        </div>
+        <div class="head-2">ITWD6.408</div>
+        <div class="head-3 horizontal-nav" >
+          <ul>
+            <li>
+              <!--If something is set as id="active" it will be highlighted-->
+              <!--An <a> tag with a href as # will send the user no where-->
+              <a href="#" id="active">Home</a>
+            </li>
+            <li>
+              <a href="forms.html">Forms</a>
+            </li>
+            <li>
+              <a href="xmlrss.html">XML/JSON</a>
+            </li>
+            <li>
+              <a href="javascript.html">JavaScript</a>
+            </li>
+            <li>
+              <a href="research.html">Research</a>
+            </li>
+          </ul>
+        </div>
+        <!--Opens the curatin navigation bar on the right hand side-->
+        <!--Onclick triggers a javascript function with the name of openNav()-->
+        <div class="head-4 openbtn" onclick="openNav()">≡</div>
+      </div>
+    </nav>
+
+    <!--Curtain Navbar-->
+    <!--
+      this navigation bar is accessed from the side of the screen which
+      will display links similar to the horizontal navbar, this navbar can 
+      also be accessed via mobile view
+    -->
+    <nav>
+      <nav id="myNav" class="overlay">
+        <!--javacript:void(0) similar to # leads no where, button similar to previous-->
+        <a href="javascript:void(0)"  class="closebtn" onclick="closeNav()">x</a>
+        <div class="overlay-content">
+          <ul>
+            <li>
+              <a href="#" id="active">Home</a>
+            </li>
+            <li>
+              <a href="forms.html">Forms</a>
+            </li>
+            <li>
+              <a href="xmlrss.html">XML/JSON</a>
+            </li>
+            <li>
+              <a href="javascript.html">JavaScript</a>
+            </li>
+            <li>
+              <a href="research.html">Research</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </nav>
+
+  </header>
+
+
+  <!--This it the main body content-->
+  <main>
+    <!--
+      Introduction panel, this panel has basic information in a 
+      container backed with a hero image
+    -->
+    <div class="introduction">
+      <div class="intro-panel">
+        <h3>Advanced Internet and Web Learning Portfolio</h3>
+        <h1>I am Josh Ferkins</h1>
+        <p>And I'm web developer</p>
+      </div>
+    </div>
+    <!--
+      Biography panel, this panel has a short description of what 
+      I like, current education / ocupation, and future hopes in a 
+      career and with this course
+    -->
+    <div class="bio-skills">
+      <div class="biography">
+        <div><h2>Bio</h2></div>
+        <div class="bio-panel">
+          <!--First panel in the container holding an image-->
+          <div class="bio-1">
+            <!--Custom avatar similar to the "ReAl JoSh"-->
+            <img src="media/avatar.png" alt="Portrait" class="portrait-icon">
+          </div>
+          <!--Second panel in the container holding the bio description-->
+          <div class="bio-2">
+            <p>
+              My Name is Josh Ferkins, I am 19 years old, currently studying a
+              Bachelor of Computer Systems, Systems Development. This site is
+              designed to display my current web development skills and
+              competences. I intend of joining the world of software development
+              further increasing my skills and capabilities. I have moved to
+              Taradale from Tairawhiti to continue my study.
+          </div>
+        </div>
+      </div>
+      <!--
+        My Skills Panel, this panel displays my skills in web development 
+        that I know prior to starting this course
+      -->
+      <div class="skills">
+          <div class="skills-panel">
+            <h2>My web technologies</h2>
+            <div class="skills-content">
+              <h3>Top 5 web technologies</h3>
+              <!--
+                Using an ordered list with the <ol> tags which defines 
+                a pre-orded list, default is listed with integer values 
+                ( 1, 2, 3, 4, ...).
+                List items defined with <li> tags
+              -->
+              <ol>
+                <li>HTML5: Using Markup to develop the structure of websites.</li>
+                <li>CSS3: Creating flesh and skin for website design.</li>
+                <li>Web Design: Developing scopes, wireframes, functionality,and colating these for development.</li>
+                <li>Code editor: Using many variants of IDE's for developingwebsites.</li>
+                <li>Scripting: By using Javascript and PHP I am able to createfunctionality through scripts.</li>
+              </ol>
+            </div>
+          </div>
+    </div>
+    </div>
+    <!--
+      Competences panel, This panel displays my current competences 
+      panel in three areas with a rating and simple description. 
+      This will also be done using flip boxes which show an initial 
+      front panel but when hovered over displays information on the 
+      back and hides the front.
+    -->
+    <div class="competences">
+      <h2>Competences</h2>
+      <p class="comp-desk">Hover over to view</p>
+      <p class="comp-mobile">Tap to view</p>
+      <div class="comp-inner">
+        <!--Outer container is used for containing the flip box and managing the hover actions-->
+        <div class="indexFlipOuter">
+          <!--Inenr container contains front and back information and flips based on hover-->
+          <div class="indexFlipInner">
+            <!--Only displays when not hovered over-->
+            <div class="indexFlipFront">
+              <h4>Hyper-Text Markup Language</h4>
+              <img src="media/html5.png" alt="html5" width="120px">
+            </div>
+            <!--Displays when hovered over or clicked on mobile-->
+            <div class="indexFlipBack">
+              <h4>Hyper-Text Markup Language</h4>
+              <hr>
+              <p>
+                <b>High Beginner</b><br>
+                I understand concepts, tools, functionalities, and symantics.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!--Flip box classes are the same here as previous flip box-->
+        <div class="indexFlipOuter">
+          <div class="indexFlipInner">
+
+            <div class="indexFlipFront">
+              <h4>Cascading Style Sheet</h4>
+              <img src="media/css3.png" alt="css3" width="120px">
+            </div>
+            <div class="indexFlipBack">
+              <h4>Cascading Style Sheet Backside</h4>
+              <hr>
+              <p>
+                <b>Beginner</b><br>
+                I understand concepts, tools, frameworks, functionalities, symantics, and relation to HTML.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!--Flip box classes are the same here as previous flip box-->
+        <div class="indexFlipOuter">
+          <div class="indexFlipInner">
+
+            <div class="indexFlipFront">
+              <h4>JavaScript</h4>
+              <img src="media/javascript.png" alt="js" width="120px">
+            </div>
+            <div class="indexFlipBack">
+              <h4>JavaScript</h4>
+              <hr>
+              <p>
+                <b>High Beginner</b><br>
+                I have prior understanding of programming concepts, tools, syntax, functionalities, and methods of work.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Statement panel, showing a basic statement of authority, displayed on the bottom of the index page-->
+    <div class="statement">
+      <h2>Statement of Authority</h2>
+      <p>
+        I confirm that,<br>
+        This is an original assessment and is entirely my own work.<br>
+        It contains no material previously published or written by another
+        person or myself, except where due acknowledgement is made in the text.
+        <br>No material which to a substaintial extent, has been submitted
+        for any other academic course is included without
+        acknowledgement.
+      </p>
+    </div>
+  </main>
+
+  <!--Similar to the head this footer is shown on all pages and contains  a logo strip, name and year, and link to the privacy policy-->
+  <footer>
+    <div class="footer-info">
+      <div class="foot-1"><p>Logo Strip</p></div>
+      <div class="foot-2"><p>© 2022 Josh Ferkins</p></div>
+      <div class="foot-3"><a href="research.html">Privacy Policy</a></div>
+    </div>
+  </footer>
+
+  <!--Link HTML document to javascript-->
+  <script type="text/javascript" src="JS/javascript.js"></script>
+
+  <!--Link enabling bootstrap for the client-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+  -->
+
+</body>
+</html>

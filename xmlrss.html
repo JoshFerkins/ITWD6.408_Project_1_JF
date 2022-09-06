@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<!--Setting or configuration of website-->
+<head>
+  <meta charset="UTF-8">
+  <title>Josh Ferkins</title>
+  <meta name="viewport" content="width=device-width, initial-scale: 1.0">
+
+  <!--Link HTML document to CSS stylesheet-->
+  <link rel="stylesheet" style="text/css" href="CSS/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+
+<!--Everything visible on the browser-->
+<body>
+  <header>
+
+    <!--Horizontal Navbar-->
+    <nav>
+      <div class="flexbox-mainNav-container">
+        <div class="head-1">
+          <img src="media/global.png" alt="logo" class="logoNav">
+        </div>
+        <div class="head-2">ITWD6.408</div>
+        <div class="head-3 horizontal-nav" >
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="forms.html">Forms</a>
+            </li>
+            <li>
+              <a href="#" id="active">XML/JSON</a>
+            </li>
+            <li>
+              <a href="javascript.html">JavaScript</a>
+            </li>
+            <li>
+              <a href="research.html">Research</a>
+            </li>
+          </ul>
+        </div>
+        <div class="head-4 openbtn" onclick="openNav()">≡</div>
+      </div>
+    </nav>
+
+    <!--Curtain Navbar-->
+    <nav>
+      <nav id="myNav" class="overlay">
+        <a href="javascript:void(0)"  class="closebtn" onclick="closeNav()">x</a>
+        <div class="overlay-content">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="forms.html">Forms</a>
+            </li>
+            <li>
+              <a href="#" id="active">XML/JSON</a>
+            </li>
+            <li>
+              <a href="javascript.html">JavaScript</a>
+            </li>
+            <li>
+              <a href="reserach.html">Research</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </nav>
+
+  </header>
+
+  <!--This it the main body content-->
+  <main>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-md-3">
+          <div class="container justify-content-around">
+            <div class="row justify-content-around">
+              <button class="col-6 col-md-12 btn btn-warning btnXMLSyntax" type="button" data-bs-toggle="collapse" data-bs-target="#XMLSyntax" aria-expanded="false" aria-controls="XMLSyntax">XML Syntax</button>
+              <button class="col-6 col-md-12 btn btn-success btnRSS" type="button" data-bs-toggle="collapse" data-bs-target="#RSS" aria-expanded="false" aria-controls="RSS" onclick="loadRSS()">RSS</button>
+            </div>
+          </div>
+        </div>
+  
+        <!--
+          This set of description cards displays information regarding 6
+          basic XML syntax rules which must be followed, these are created using
+          boostrap rows and special methods of displaying HTML tags such as &lt; for '<'.
+        -->
+        <div class="col-12 col-md-9">
+          <div class="row">
+            <div class="col-12">
+              <div class="collapse multi-collapse" id="XMLSyntax">
+                <div class="card card-body">
+
+                  <h2>XML Syntax Rules</h2>
+                  <p>
+                    XML has specific rules that must be followed, XML may be easy to write
+                    but these must be followed to provide, functionality, readbility, and accessibility 
+                    for users and developers.
+                  </p>
+
+                  <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6  bg-light border border-3 border-white">
+                            
+                            <h2>Closing Tags</h2>
+                            <p>
+                                When ever a tag is created it must also be created
+                                with a closing tag. Websites ran without closing tags 
+                                will not know when the specific content is supposed to finish
+                            </p>
+                            <p id="xmlRulesCode">
+                                &lt;title&gt;This is an article title&lt;title&gt;
+                            </p>
+
+                        </div>
+                        <div class="col-sm-12 col-md-6 bg-light border border-3 border-white">
+
+                            <h2>ROOT Elements</h2>
+                            <p>
+                                Elements that contain content are required to be 
+                                nested within a root element. Root elements contain parent
+                                elements which also can contain other child elements.
+                            </p>
+                            <p id="xmlRulesCode">
+                                &lt;root&gt;&lt;element&gt;This is a nested element&lt;/element&gt;&lt;/root&gt;
+                            </p>
+
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-12 col-md-6 bg-light border border-3 border-white">
+
+                            <h2>Name / Value pairs</h2>
+                            <p>
+                                When creating attributes for elements you must use a 
+                                name / value pair. This servers as a key tag for 
+                                nested child elements.
+                            </p>
+                            <p id="xmlRulesCode">
+                                &lt;element class="main"&gt;This is a name/value pair&lt;/element&gt;
+                            </p>
+
+                        </div>
+                        <div class="col-sm-12 col-md-6 bg-light border border-3 border-white">
+
+                            <h2>Quoted Values</h2>
+                            <p>
+                                Values created through name / value pairs must be 
+                                created within double quotes " " following the name
+                                and '=' sign.
+                            </p>
+                            <p id="xmlRulesCode">
+                                &lt;element class="main"&gt;This is a quoted value&lt;/element&gt;
+                            </p>
+
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm-12 col-md-6 bg-light border border-3 border-white">
+
+                            <h2>Preserved White Spaces</h2>
+                            <p>
+                                When creating content within elements, it is important
+                                to be aware that white spaces are preserved in the text.
+                                any white space you enter will not be removed / ignored
+                            </p>
+                            <p id="xmlRulesCode">
+                                &lt;text&gt;This is displaying preserved white space&lt;/text&gt;
+                            </p>
+
+                        </div>
+                        <div class="col-sm-12 col-md-6 bg-light border border-3 border-white">
+
+                            <h2>Special Characters</h2>
+                            <p>
+                                When writing special characters, "& * %...", it is important
+                                to know that they are written in a special format to be displayed as 
+                                text. Typically special characters perform actions within text unless written as so
+                            </p>
+                            <p id="xmlRulesCode">
+                                &lt;element&gt;"&" must be written as &amp to display&lt;/element&gt;
+                            </p>
+
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="collapse multi-collapse" id="RSS">
+                <div class="card card-body">
+
+                    <h1>RSS </h1>
+                    <p>This news feed is captured using xml and rss functionality.</p>
+                    <!--
+                      To use an rss feed you must allow for temporary permission from 
+                      cors-anywhere which allows for collection of XML files using RSS.
+
+                      
+                    -->
+                    <p><a href="https://cors-anywhere.herokuapp.com/" target="_blank">https://cors-anywhere.herokuapp.com/</a> to grant rss access.</p>
+                    
+                    <div class="container container-fluid">
+                        <div class="row">
+                          <!--These two sections are linked to Javascript functions to append and display xmlrss feeds-->
+                          <section class="col-md-6 col-sm-12" id="rssFeedLeft"></section>
+                          <section class="col-md-6 col-sm-12" id="rssFeedRight"></section>
+                        </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    
+  </main>
+
+  <footer>
+    <div class="footer-info">
+      <div class="foot-1"><p>Logo Strip</p></div>
+      <div class="foot-2"><p>© 2022 Josh Ferkins</p></div>
+      <div class="foot-3"><a href="research.html">Privacy Policy</a></div>
+    </div>
+  </footer>
+
+
+  <!--Link HTML document to javascript-->
+  <script type="text/javascript" src="JS/javascript.js"></script>
+
+  <!--Link enabling bootstrap for the client-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+  -->
+
+</body>
+</html>

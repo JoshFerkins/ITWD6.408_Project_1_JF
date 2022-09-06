@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<!--Setting or configuration of website-->
+<head>
+  <meta charset="UTF-8">
+  <title>Josh Ferkins</title>
+  <meta name="viewport" content="width=device-width, initial-scale: 1.0">
+
+  <!--Link HTML document to CSS stylesheet-->
+  <link rel="stylesheet" style="text/css" href="CSS/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+
+<!--Everything visible on the browser-->
+<body>
+  <header>
+
+    <!--Horizontal Navbar-->
+    <nav>
+      <div class="flexbox-mainNav-container">
+        <div class="head-1">
+          <img src="media/global.png" alt="logo" class="logoNav">
+        </div>
+        <div class="head-2">ITWD6.408</div>
+        <div class="head-3 horizontal-nav" >
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="forms.html">Forms</a>
+            </li>
+            <li>
+              <a href="xmlrss.html">XML/JSON</a>
+            </li>
+            <li>
+              <a href="javascript.html">JavaScript</a>
+            </li>
+            <li>
+              <a href="#" id="active">Research</a>
+            </li>
+          </ul>
+        </div>
+        <div class="head-4 openbtn" onclick="openNav()">≡</div>
+      </div>
+    </nav>
+
+    <!--Curtain Navbar-->
+    <nav>
+      <nav id="myNav" class="overlay">
+        <a href="javascript:void(0)"  class="closebtn" onclick="closeNav()">x</a>
+        <div class="overlay-content">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="forms.html">Forms</a>
+            </li>
+            <li>
+              <a href="xmlrss.html">XML/JSON</a>
+            </li>
+            <li>
+              <a href="javascript.html">JavaScript</a>
+            </li>
+            <li>
+              <a href="#" id="active">Research</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </nav>
+
+  </header>
+
+  <!--This it the main body content-->
+<main>
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+              <!--
+                This entire page is self explanitory, there are no new additions (functions, methods, clauses, designs).
+                Just a page showing information I have researched then displayed on seperate flip boxes corresponding to their relevant title.
+                Flipboxes are split into rows of two boxes for ease of design, an outer box which 
+                holds an inner box which will flip between the front and back information.
+              -->
+                <div class="col-md-6 col-sm-12 bg-light vstack border border-3 border-white flipOuter">
+                  
+                    <div class="flipInner m-3 rounded">
+                        <div class="flipFront hstack">
+                            <img src="media/ccLogo.jpg" alt="CC Logo" height="150">
+                            <h1>Copyright,<br>Creative Commons</h1>
+                        </div>
+                        <div class="flipBack">
+                            <h5>
+                                Describe basic principles of copyright, 4 types of CC
+                                licences and Fair Use with image as illustration
+                            </h5>
+                            <hr>
+                            <!--
+                              Due to the limited size of the mobile view the information displayed on the PC
+                              side is to verbose to display on mobile, the only method I saw of getting around this 
+                              was to create a second set of information and only display on mobile side with compressed and 
+                              simplified data and information
+                            -->
+                            <p class="researchPCText">
+                              The expression of an idea in an original work is legally protected by copyright as soon as it becomes 'recorded in material form'.<br>
+                              
+                              &#127343;<b>Attribution</b> : User is allowed to distribute, remix, adapt, or build as long as credit is given to the original work.<br>
+                              &#127343;&#127246;<b>Attribution-ShareALike</b> : Same restrictions as attribution, users must use the same licenses as original.<br>
+                              &#127343;&#8860;<b>Attribution-NoDerivs</b> : Same restrictions as attribution, users may reuse work, without sharing in the adapted form.<br>
+                              &#127343;&#127247;<b>Attribution-NonCommercial</b> : Same restictions as attribution, users may not use for commerical purposes.<br>                              
+                              <a href="https://creativecommons.org/licenses/" target="_blank">https://creativecommons.org/licenses/</a>
+                            </p>
+                            <p class="researchMobileText">
+                              <b>Attribution</b> : Distribution, modification, must include acknowledgement.<br>
+                              <b>Attribution-ShareALike</b> : Same as attribution, derivative must have original licenses.<br>
+                              <b>Attribution-NoDerivs</b> : Same as attribution, modified versions may not be shared.<br>
+                              <b>Attribution-NonCommerical</b> : Same as attribution, may not be distributed for commerical use.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 bg-light vstack border border-3 border-white flipOuter">                    
+                    <div class="flipInner m-3 rounded">
+                        <div class="flipFront hstack">
+                            <img src="media/privacyLogo.jpg" alt="Privacy logo" height="150">
+                            <h1>Privacy & Web<br>Privacy Policy</h1>
+                        </div>
+                        <div class="flipBack">
+                            <h5>
+                                Describe what is a privacy policy? Create a short privacy policy to your website
+                            </h5>
+                            <hr>
+                            <p class="researchPCText">
+                              A privacy policy describes to the user what and how they information will be used, and throug what methods information will be collected.
+                              <br>
+                              <b>Privacy Policy</b>
+                              <br>
+                              Personal information will be gathered through the forms tab with two methods, HTML form gathered information 
+                              will be stored within javascript arrays, information gathered from google forms will be kept on a google sheets 
+                              page in a grid like fashion. Personal information will be used for proof of capture for this specific assignment. 
+                              <a href="https://www.techtarget.com/whatis/definition/privacy-policy" target="_blank">https://www.techtarget.com/whatis/definition/privacy-policy</a>
+                            </p>
+                            <p class="researchMobileText">
+                              <b>Privacy Policy</b> :   Personal information will be gathered through the forms tab with two methods, HTML form gathered information 
+                              will be stored within javascript arrays, information gathered from google forms will be kept on a google sheets 
+                              page in a grid like fashion. Personal information will be used for proof of capture for this specific assignment.   
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 bg-light vstack border border-3 border-white flipOuter">
+                    
+                    <div class="flipInner m-3 rounded">
+                        <div class="flipFront hstack">
+                            <img src="media/webLogo.jpg" alt="Web Logo" height="150">
+                            <h1>Search Engine<br>Optimisation</h1>
+                        </div>
+                        <div class="flipBack">
+                            <h5>
+                                Describe 5 ways to improve the visibility of your website on search engine.
+                            </h5>
+                            <hr>
+                            <p class="researchPCText">                              
+                              <b>Keywords</b> : By using the &#60;meta&#62; tags, you can specify keywords for you website to use in web searchs.<br>
+                              <b>Optimising Pages</b> : By linking your pages with keywords, url links, and meta descriptions, google can easily crawl and index your pages.<br>
+                              <b>Verification</b> : By getting your website verified by the specific browsers, it will be prioritised for search results.<br>
+                              <b>SEO Audit</b> : You may prepare your website with an SEO audit to test the website performance including errors, links or redirects.<br>
+                              <b>Site Map</b> : By submitting a site map of your website to webmaster tools, the search engine will be able to crawl and index you pages with ease.<br>                                          
+                              <a href="https://auxiliumtechnology.com/10-ways-improve-website-visibility-search-engines/" target="_blank">https://auxiliumtechnology.com/10-ways-improve-website-visibility-search-engines/</a>
+                            </p>
+                            <p class="researchMobileText">
+                              <b>Keywords</b> : Assign keywords with &#60;meta&#62; tags for searches.<br>
+                              <b>Optimise Page</b> : Proper url links, meta tags, keywords for google page indexing.<br>
+                              <b>Verification</b> : Search engine verification allows for priority searches.<br>
+                              <b>SEO Audit</b> : SEO Audits allow for performance testing for errors, links, and redirects.<br>
+                              <b>Site Map</b> : Submitting a site map to engine tools allows for better page indexing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 bg-light vstack border border-3 border-white flipOuter">
+                    
+                    <div class="flipInner m-3 rounded">
+                        <div class="flipFront hstack">
+                          <img src="media/publishLogo.png" alt="Publish Logo" height="150">
+                            <h1>Web Publishing</h1>
+                        </div>
+                        <div class="flipBack">
+                            <h5>
+                                Describe 3 major factors you should consider when choosing a right web hosting provider
+                            </h5>
+                            <hr>
+                            <p class="researchPCText">
+                              <b>Website Requirements</b> : To choose the best hosting service, you must understand your website needs. Some hosting services are CDN designed for content-heavy sites, services designed for e-commerce; content management systems are also important to consider.<br>
+                              <b>Server Uptime</b> : Ensuring server reliability is paramount to successfully maintaining website uptime. This can be affected by multiple aspects such as server provider, location, latency, operating systems, and restrictions.<br>
+                              <b>Features</b> : Certain websites based on their features including JavaScript, JSON, XML, or RSS will require specific primary features provided by the web hosting service to opperate efficiently.<br>
+                              <a href="https://www.dreamhost.com/academy/how-to-choose-best-web-hosting/" target="_blank">https://www.dreamhost.com/academy/how-to-choose-best-web-hosting/</a>
+                            </p>
+                            <p class="researchMobileText">
+                              <b>Requirements</b> : CDN for content-heavy sites, e-commerce, and CMS  are to consider when choosing a host.<br>
+                              <b>Server Uptime</b> : Ensuring the hosting server can maintain a steady and constant uptime.<br>
+                              <b>Feature</b> : Primary features for website specific features to take into consideration.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 bg-light vstack border border-3 border-white flipOuter">
+                    
+                    <div class="flipInner m-3 rounded">
+                        <div class="flipFront hstack">
+                            <img src="media/maintLogo.jpg" alt="Maint Logo" height="150">
+                            <h1>Web Performance,<br>Maintenance</h1>
+                        </div>
+                        <div class="flipBack">
+                            <h5>
+                                Describe 5 ways to reduce page loading time & describe 5 important
+                                actions to carry out when maintaining a website.
+                            </h5>
+                            <hr>
+                              <div class="row hstack">
+                                <div class="col researchPCText">
+                                  <h5>Page load time</h5>
+                                  <p><b>1</b> : Optimised web hosting service</p>
+                                  <p><b>2</b> : Reduced website redirects</p>
+                                  <p><b>3</b> : Compressed and optimised elements</p>
+                                  <p><b>4</b> : Asynchronous JavaScript and CSS loading</p>
+                                  <p><b>5</b> : Clean, optimise, shorten, minify code</p>
+                                  <a href="https://blog.hubspot.com/marketing/how-to-reduce-your-websites-page-speed#:~:text=Compress%20and%20optimize%20your%20images,compress%20and%20optimize%20your%20images." target="_blank">https://blog.hubspot.com/marketing/</a>
+                                </div>
+                                <div class="col researchPCText">
+                                  <h5>Website maintainence</h5>
+                                  <p><b>1</b> : Error checking, especially for new content</p>
+                                  <p><b>2</b> : Frequent SEO audits for performance</p>
+                                  <p><b>3</b> : Review website structure and design</p>
+                                  <p><b>4</b> : Maintain 404 errors or redirects</p>
+                                  <p><b>5</b> : Update software, plugins, and backups</p>
+                                  <a href="https://fingerprintmarketing.com/website-maintenance/" target="_blank">https://fingerprintmarketing.com/website-maintenance/</a>
+                                </div>
+                              </div>
+                              <div class="row hstack">
+                                <div class="col researchMobileText">
+                                  <h5>Page load time</h5>
+                                  <p><b>1</b> : Web hosting</p>
+                                  <p><b>2</b> : Reduced redirects</p>
+                                  <p><b>3</b> : Optimised elements</p>
+                                  <p><b>4</b> : Asynchronous loading</p>
+                                  <p><b>5</b> : Minify code</p>
+                                </div>
+                                <div class="col researchMobileText">
+                                  <h5>Website maintainence</h5>
+                                  <p><b>1</b> : Error checking</p>
+                                  <p><b>2</b> : SEO audits</p>
+                                  <p><b>3</b> : Website structure</p>
+                                  <p><b>4</b> : Maintain redirects</p>
+                                  <p><b>5</b> : Update software</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 bg-light vstack border border-3 border-white flipOuter">
+                    
+                    <div class="flipInner m-3 rounded">
+                        <div class="flipFront hstack">
+                            <img src="media/securityLogo.jpg" alt="Security Logo" height="150">
+                            <h1>Web Security</h1>
+                        </div>
+                        <div class="flipBack">
+                            <h5> 
+                                Describe 5 common cyber attacks (threats) and preventive measures against those attacks
+                            </h5>
+                            <hr>
+
+                            <p class="researchPCText">
+                              <b>DoS</b> : This is a Denial of Service attack which floods the server with useless information slowing it. Reinforce security for internet-facing devices<br>
+                              <b>XSS</b> : Cross-site Scripting is done by injecting scripts into websites with malicious intent. Filtering information inputs<br>
+                              <b>SQLI</b> : SQL Injection, injecting SQL statements into servers or databases to retrieve or modify information. Prepared statements and input validation<br>
+                              <b>Path Traversal</b> : Allows access to application files. Avoid passing user-supplied input to filesystem APIs<br>
+                              <b>Local File Inclusion</b> : Forces the application to run a specific file. Use secure databases, reduce incorporating local files<br>
+                              <a href="https://www.trustnetinc.com/web-application-attacks/" target="_blank">https://www.trustnetinc.com/web-application-attacks/</a>
+                            </p>
+                            <p class="researchMobileText">
+                              <b>DoS</b> : Reinforce security for internet-facing devices.<br>
+                              <b>XSS</b> : Cross-site Scripting, filtering inputs.<br>
+                              <b>SQLI</b> : SQL Injection, prepared statements and verified inputs.<br>
+                              <b>Path Traversal</b> : Avoid passing user-supplied input to filesystem APIs.<br>
+                              <b>Local File Inclusion</b> : Secure databases, reduce local files.
+                            <p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+  
+  <div class="footer-info">
+    <div class="foot-1"><p>Logo Strip</p></div>
+    <div class="foot-2"><p>© 2022 Josh Ferkins</p></div>
+    <div class="foot-3"><p><a href="#">Privacy Policy</a></p></div>
+  </div>
+  
+
+<!--Link HTML document to javascript-->
+<script type="text/javascript" src="JS/javascript.js"></script>
+
+<!--Link enabling bootstrap for the client-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+-->
+
+</body>
+</html>

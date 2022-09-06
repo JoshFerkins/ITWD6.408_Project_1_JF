@@ -1,0 +1,665 @@
+/*MOBILE FIRST APPROACH*/
+/*Define style in this part will be applied for small devices*/
+
+/* "*" defines everything on the file */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*Defines everything in the body, the body is everything visible to the end-user*/
+body { 
+  background-color: white;
+  font-family: "Times New Roman", Times, serif;
+  /*
+  Later in the file font-size is referred to with em which 
+  refers to this value, the root element.
+  1em is 100% of root value, 0.8em is 80% of root value.
+  */
+  font-size: 20px;
+}
+
+/*Top section holding the navbar, defined later*/
+header {
+  background-color: #DAF7A6;
+  /* "vh" is referring to 'viewport height', so 8vh is 8% of the viewable dimensions*/
+  min-height: 8vh;
+}
+
+/*Defines the main section of the pages, this excludes the header and footer*/
+main {
+  background-color: White;
+  min-height: 84vh;
+}
+
+/*Defines the bottem area of the page which holds the created footer information, defined later*/
+footer {
+  background-color: #DAF7A6;
+  max-height: 8vh;
+}
+
+
+/*Define horizontal navigation bar held in the header section*/
+/*The primary container which holds the entire navigation bar*/
+.flexbox-mainNav-container {
+  /*
+    Flex display is seen commonly which enables easy 
+    transformation and creation of flexible and 
+    accessible displays.
+  */
+  display: flex;
+  flex-direction: row;
+}
+
+/*Defining the padding section of the main div holding the horizontal navbar*/
+.flexbox-mainNav-container div {
+  padding: 5px;
+}
+
+/*First section of the navbar holding the image(logo)*/
+.head-1 {
+  /*If flex is set to zero, the container is flexible to the size of the content*/
+  flex: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/*Second section of the navbar holding the title*/
+.head-2 {
+  flex: 2;
+  font-size: 1.2em; /*120% of root font-size*/
+  display: flex;
+  align-items: center;
+}
+
+/*Third section of the navbar holding the unorderd list containing links*/
+.head-3 {
+  flex: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Fourth section of the navbar holding the menu icon to activate the dropdown navbar*/
+.head-4 {
+  flex: 1;
+  font-size: 3em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+/*Hides the link list during mobile view*/
+.horizontal-nav {display: none;}
+
+/*
+  Define dropdown navigation bar / menu held in the header section as well.
+
+  This navbar is not visible until the menu icon in head-4 is pressed by the 
+  end-user which it then drops down from the top.
+*/
+
+/*Primary container holding the navbar*/
+.overlay {
+  /*max-height: 50%;*/
+  overflow: initial;
+  height: 0;
+  width: 50%;
+  position: fixed;
+  /*z-index determines what is positioned on top, it is easier to think about it with a 3rd dimension*/
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+  overflow-x: hidden;
+  /*Used for the dropdown animation*/
+  transition: 0.5s;
+}
+
+/*Holds the content contained within the navbar*/
+.overlay-content {
+  position: relative;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/*modifies all list items and href links held within the navbar*/
+.overlay li a{
+  padding: 8px;
+  /*Removes underlines from default links*/
+  text-decoration: none;
+  font-size: 2em;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+/*Definitions for the closebtn held within the overlay container*/
+.overlay .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+  color: red;
+}
+
+/*Changes the cursor image when hovering over the open button*/
+.openbtn {cursor: pointer;}
+
+/*
+  Attributes for both nav bars
+  Changes list background colors when list items are hovered over
+*/
+li:hover:not(.active) {
+  background-color: pink;
+}
+
+/*If something is tagged as "active" it will take on these properties*/
+#active {
+  background-color: orange;
+}
+
+
+/*
+ Defines the footer
+
+ Defines the base footer container containing all footer content
+*/
+
+.footer-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  min-height: 8vh;
+  width: 100%;
+  font-size: 1em;
+  /*Special grid template for specifying the grid layout using id's in the footer-info*/
+  grid-template-areas:
+  "area-2 area-3"
+}
+
+/*part of the grid which contains the logostrip*/
+.foot-1 {
+  grid-area: area-1;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/*part of the grid which contains name and year*/
+.foot-2 {
+  grid-area: area-2;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 1em;
+}
+
+/*part of the grid which contains a link to the privacy policy on the research page*/
+.foot-3 {
+  grid-area: area-3;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 1em;
+}
+
+
+/*Main body sections*/
+
+/*Index page, main home page*/
+
+/*
+  Introduction
+
+  Defines the attributes of the primary introduction section
+  which contains all introduction information.
+*/
+
+.introduction {
+  /*This part creates a hero image behind the content*/
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("../media/hero-image.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Defines the container text added through HTML*/
+.intro-panel {
+  /*background-color: #d9d9d9;*/
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 3px black solid;
+  margin: 3% 3% 3% 3%;
+  padding: 2% 10% 2% 10%;
+  text-align: center;
+  color: #fff;
+}
+
+/*Defines the p, h1, and h3 tags within the introduction container*/
+.introduction .intro-panel p, h1, h3 {padding: 8px;}
+
+
+/*
+  Biography
+
+  Definitions for the primary container in the biography section
+*/
+.biography {
+  background-color: #fff1c4;
+  margin:0;
+  min-height: 20vh;
+}
+
+/*Container for the content held within the biography section*/
+.bio-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*Left half of the bio holding the image*/
+.bio-1 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30%;
+  margin: 5% 3% 0% 0%;
+}
+/*Specifies portrait width within the biography section*/
+.bio-1 .portrait-icon {
+  width: 150px;
+}
+/*Right half containing a written biography*/
+.bio-2 {
+  flex: 2;
+  min-height: 70%;
+  margin: 5% 3% 0% 0%;
+  padding-bottom: 3%;
+}
+
+
+/*
+  Skills
+
+  Defines the primary container for the skills panel
+*/
+.skills {
+  background-color: #fcedfc;
+  margin: 0;
+  display: flex;
+  min-height: 20vh;
+}
+/*Contains information in the skills panel*/
+.skills-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin: 3%;
+}
+
+/*
+  Competences
+
+  Defines the primary container holding elements in the competences section
+*/
+.competences {
+  background-color: #dcfcdd;
+  display: block;
+  min-height: 30vh;
+  justify-content: center;
+  align-items: center;
+}
+
+/*hides certain parts for a desktop view*/
+.comp-desk {
+  display: none;
+}
+/*Shows certain parts for a mobile view*/
+.comp-mobile {
+  display: block;
+}
+
+/*Contains flip boxes*/
+.comp-inner {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /*Used for flip animations*/
+  perspective: 1000px;
+}
+
+/*The outer section of the flip box which holds the animated flip box and manages actions*/
+.indexFlipOuter {
+  flex: 1;
+
+  background-color: transparent;
+  margin: 2.5% 5% 5% 5%;
+  height: 140px;
+  width: 360px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  perspective: 1000px;
+}
+
+/*Contains the front information and back information, this container flips when hovered*/
+.indexFlipInner {
+  background-color: white;
+  width: inherit;
+  height: inherit;
+  position: relative;
+
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/*When the outer box is hovered over the inner container flips*/
+.indexFlipOuter:hover .indexFlipInner{
+  transform: rotateX(180deg);
+}
+
+/*Definitions for the front and back information*/
+.indexFlipFront, .indexFlipBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /*Used for flipping and hiding relevant information*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/*Defines information held on the front of the box*/
+.indexFlipFront {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/*Defines h4 tags in the front box*/
+.indexFlipFront h4 {
+  display: none;
+}
+
+/*Defines information held on the back of the box*/
+.indexFlipBack {
+  background-color: white;
+  color: black;
+  transform: rotateX(180deg);
+}
+/*Defines h4 tags in the back box*/
+.indexFlipBack h4 {
+  display: none;
+}
+
+
+/*
+  Statement
+
+  Defines the primary container for the statement of authority
+*/
+.statement {
+  background-color: #fcf5e3;
+  min-height: 20vh;
+}
+/*Defines h2 tags in the statement*/
+.statement h2 {
+  text-align: center;
+}
+/*Defines p tags in the statements*/
+.statement p {
+  margin: 3% 5% 0% 5%;
+  padding-bottom: 3%;
+  text-align: center;
+}
+
+
+
+/*
+  XMLRSS page
+
+  Changes the font color of the rules shown in the xmlrss rules page
+*/
+#xmlRulesCode {
+  color: blue;
+}
+
+
+
+/*
+  Defining styles for research page
+
+  Defines flip boxes used to hold information
+
+  Defines the outer container of the flip box which holds the inner and manages animations
+*/
+.flipOuter {
+  
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  background-color: transparent;
+  
+  height: 350px;
+
+  perspective: 1000px;
+}
+
+/*Contains the inner container of the flipbox*/
+.flipInner {
+  background-color: white;
+  width: inherit;
+  height: inherit;
+  position: relative;
+  width: 90%;
+  height: 300px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+/*When the cursor hovers over the outer section, the inner animates*/
+.flipOuter:hover .flipInner{
+  transform: rotateX(180deg);
+}
+
+/*Defines the front and back of the flipboxes*/
+.flipFront, .flipBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/*Defines the information in the front of the flipbox*/
+.flipFront {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: white;
+}
+
+/*Defines the information in the back of the flipbox*/
+.flipBack {
+  background-color: white;
+  color: black;
+  transform: rotateX(180deg);
+}
+/*Defines h5 tags on the back*/
+.flipBack h5 { 
+  margin: 2%; 
+  font-size: 1em;
+}
+/*Defines the p tags on the back*/
+.flipBack p { margin: 1%; }
+
+/*
+  Defining elements on the JavaScript page
+  Defining the customer select element on the customisation page
+*/
+.customSelect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+/*
+  Research Page
+
+  Hides PC relevant information on mobile
+
+  Shows Mobile relevant information on mobile
+*/
+.researchPCText { display: none; }
+.researchMobileText { 
+  display: block;
+  font-size: 0.9em;
+ }
+
+
+/*CUSTOMISE styles for big screen: tablet, laptop, desktop*/
+
+@media screen and (min-width: 768px) {
+  /*Set styles for big screen here*/
+
+  /*Changes navbar definitions on large screens*/
+  .head-1 .logoNav{width: 70px;}
+  .head-2 {font-size: 2em;}
+
+  /*Redefines the horizontal nav bar on PC*/
+  .horizontal-nav {
+    display: block;
+    background-color: #DAF7A6;
+    padding: 10px 10px 10px 10px;
+  }
+
+  /*Redefines the unorderd list on large screens*/
+  .horizontal-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  /*List items*/
+  .horizontal-nav ul li {
+    display: inline-block;
+    font-size: 1.2em;
+  }
+  /*list item links*/
+  .horizontal-nav ul li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 20px 25px;
+    text-decoration: none;
+  }
+
+  /*When the user hovers over a link*/
+  .horizontal-nav ul li:hover:not(.active) {
+    background-color: pink;
+  }
+
+  /*Redefine dropdown menu for large screen*/
+  .overlay {width: 15%;}
+  .overlay a { font-size: 2em;}
+  .overlay .closebtn {
+    font-size: 3em;
+    top: 15px;
+    right: 35px;
+  }
+
+
+  /*Main body content*/
+
+  /*bio & skill panels*/
+  .bio-skills {
+    display: flex;
+    flex-direction: row;
+  }
+
+
+  /*Biography*/
+  .biography {flex: 1; }
+  .bio-panel {flex-direction: row;}
+
+
+  /*Skills*/
+  .skills { flex: 1;}
+
+
+  /*Competences*/
+  .comp-inner {
+    flex-direction: row;
+  }
+
+  /*Shows PC competences panel informatio nand hides mobile information*/
+  .comp-desk { display: block; }
+  .comp-mobile { display: none; }
+
+  /*index competences*/
+  .indexFlipOuter {
+    height: 200px;
+    width: 360px;
+    margin: 2.5% 5% 2.5% 5%;
+  }
+
+  .indexFlipFront h4 {
+    display: block;
+    margin-bottom: 10%;
+  }
+
+  .indexFlipBack h4 {
+    display: block;
+  }
+
+
+  /*Redefining javascript page on pc*/
+  .jsSlideshowImage {
+    width: 300px;
+  }
+
+  /*Redefine footer*/
+  .footer-info {
+    font-size: 1.3em;
+    display: grid | inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "area-1 area-2 area-3";
+  }
+
+  /*Redefine research page for pc*/
+  .researchPCText {
+    display: block;
+    font-size: 0.8em;
+  }
+  .researchMobileText {
+    display: none;
+  }
+
+  .foot-1 {
+    display: flex;
+  }
+
+}

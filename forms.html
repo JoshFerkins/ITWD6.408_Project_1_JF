@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<!--Setting or configuration of website-->
+<head>
+  <meta charset="UTF-8">
+  <title>Josh Ferkins</title>
+  <meta name="viewport" content="width=device-width, initial-scale: 1.0">
+
+  <!--Link HTML document to CSS stylesheet-->
+  <link rel="stylesheet" style="text/css" href="CSS/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+
+<!--Everything visible on the browser-->
+<body>
+  <header>
+
+    <!--Horizontal Navbar-->
+    <nav>
+      <div class="flexbox-mainNav-container">
+        <div class="head-1">
+          <img src="media/global.png" alt="logo" class="logoNav">
+        </div>
+        <div class="head-2">ITWD6.408</div>
+        <div class="head-3 horizontal-nav" >
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="#" id="active">Forms</a>
+            </li>
+            <li>
+              <a href="xmlrss.html">XML/JSON</a>
+            </li>
+            <li>
+              <a href="javascript.html">JavaScript</a>
+            </li>
+            <li>
+              <a href="research.html">Research</a>
+            </li>
+          </ul>
+        </div>
+        <div class="head-4 openbtn" onclick="openNav()">≡</div>
+      </div>
+    </nav>
+
+    <!--Curtain Navbar-->
+    <nav>
+      <nav id="myNav" class="overlay">
+        <a href="javascript:void(0)"  class="closebtn" onclick="closeNav()">x</a>
+        <div class="overlay-content">
+          <ul>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="#" id="active">Forms</a>
+            </li>
+            <li>
+              <a href="xmlrss.html">XML/JSON</a>
+            </li>
+            <li>
+              <a href="javascript.html">JavaScript</a>
+            </li>
+            <li>
+              <a href="research.html">Research</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </nav>
+
+  </header>
+
+
+  <!--This it the main body content-->
+  <main>
+
+    <!--
+      By using bootstrap I am able to easily create simply and stunning
+      webpages using inbuilt classes such as container-fluid or row.
+    -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-md-3">
+          <div class="container justify-content-around">
+            <!--
+              'row' allows for the creation of a 1 dimensional grid allowing 
+              for the developer to specify how much space each element will 
+              contain suing col-(n).
+            -->
+            <div class="row justify-content-around">
+              <!--
+                Two buttons to access seperate cards which will drop down from
+                the top holding different information.
+              -->
+              <button class="col-6 col-md-12 btn btn-warning btnHTMLForm" type="button" data-bs-toggle="collapse" data-bs-target="#HTMLForm" aria-expanded="false" aria-controls="HTMLForm">HTML Form</button>
+              <button class="col-6 col-md-12 btn btn-success btnGoogleForm" type="button" data-bs-toggle="collapse" data-bs-target="#googleForm" aria-expanded="false" aria-controls="googleForm">Google Form</button>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-12 col-md-9">
+          <div class="row">
+            <div class="col-12">
+              <!--This card displays an html created form which will be created through bootstrap elements and validation-->
+              <div class="collapse multi-collapse" id="HTMLForm">
+                <div class="card card-body">
+
+                  <h1>Bootstrap: HTML Form</h1>
+                  <form class="container" name="survey" method="post" enctype="text/plain">
+
+                    <!--First and surname inputs-->
+                    <div class="row mb-3">
+                      <!--Label and input combinations create simple instructions anyone can follow requiring a string input-->
+                      <label for="inputFirstNm" class="col-sm-2 col-form-label">First Name</label>
+                      <div class="col-sm-10">
+                        <!--By listing on of the attributes of an element as 'required' this will notify the user to fill it out when they are unable to do so-->
+                        <input type="text" class="form-control" id="inputFirstNm" required>
+                      </div>
+                    </div>
+                      <div class="row mb-3">
+                        <label for="inputLastNm" class="col-sm-2 col-form-label">Surname</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputLastNm" required>
+                        </div>
+                      </div>
+
+                      <!--Section allows input for address ( two lines )-->
+                      <h3>Address</h3>
+                      <div class="row mb-3">
+                        <label for="inputAddress1" class="col-sm-2 col-form-label">Address 1</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputAddress1" required>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="inputAddress2" class="col-sm-2 col-form-label">Address 2</label>
+                        <div class="col-sm-10">
+                          <!--This section does not require validation-->
+                          <input type="text" class="form-control" id="inputAddress2">
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="inputTownCity" class="col-sm-2 col-form-label">Town / City</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputTownCity" required>
+                        </div>
+                      </div>
+
+                      <!--Gender radio-->
+                      <fieldset class="row mb-3 required">
+                        <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+                        <div class="col-sm-10">
+                          <!--User form-check-inline for horizontal layout-->
+                          <!--
+                            Radio buttons are a set of "click" input which ony 
+                            allows one, typcially displayed using 
+                            circle true/false buttons
+                          -->
+                          <!--'required' makes it so one value is required-->
+                          
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="genderRadio1" value="option1" required>
+                            <label class="form-check-label" for="genderRadio1">
+                              Female
+                            </label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="genderRadio2" value="option2" required>
+                            <label class="form-check-label" for="genderRadio2">
+                              Male
+                            </label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="genderRadio3" value="option3" required>
+                            <label class="form-check-label" for="genderRadio3">
+                              Other
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+
+                      
+
+                      <!--Phone type checkboxes-->
+                      <fieldset class="row mb-3" required>
+                        <legend class="col-form-label col-sm-2 pt-0">Phone Type</legend>
+                        <div class="col-sm-10">
+                          <!--User form-check-inline for horizontal layout-->
+                          <!--Checkboxes are similar to readio buttons but multiple can be selected-->
+                          <!--This input does not require validation according to assignment specifications-->
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="gridRadios" id="phTypeRadio1" value="option1">
+                            <label class="form-check-label" for="phTypeRadio1">
+                              iPhone
+                            </label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="gridRadios" id="phTypeRadio2" value="option2">
+                            <label class="form-check-label" for="phTypeRadio2">
+                              Samsung
+                            </label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="gridRadios" id="phTypeRadio3" value="option3">
+                            <label class="form-check-label" for="phTypeRadio3">
+                              Huawei
+                            </label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="gridRadios" id="phTypeRadio4" value="option4">
+                            <label class="form-check-label" for="phTypeRadio4">
+                              Oppo
+                            </label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="gridRadios" id="phTypeRadio5" value="option5">
+                            <label class="form-check-label" for="phTypeRadio5">
+                              Spark
+                            </label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="gridRadios" id="phTypeRadio6" value="option6">
+                            <label class="form-check-label" for="phTypeRadio6">
+                              Other
+                            </label>
+                          </div>
+
+                      </fieldset>
+
+                      <!--Dropdown button for phone provider-->
+                      <div class="row mb-3">
+                        <label for="inputLastNm" class="col-sm-2 col-form-label">Phone Provider</label>
+                        <div class="col-lg-3">
+                          <!--Form select is a dropdown select in a drop down menu only allowing for one value selected-->
+                          <select class="form-select" aria-label="Default select example" id="selectProvider">
+                            <option value="">None</option>
+                            <option value="1">Spark</option>
+                            <option value="2">2Degress</option>
+                            <option value="3">Vodafone</option>
+                            <option value="4">Now</option>
+                            <option value="5">Other</option>
+                          </select>                        
+                        </div>
+                      </div>
+
+                      <!--Phone use explaination-->
+                      <div class="row mb-3">
+                        <label for="inputExplain" class="col-sm-2 col-form-label">Do you use your phone for study? If so please explain</label>
+                        <div class="col-sm-10">
+                          <!--A long text input allowing for the end-user to input long text instead of shorter answers-->
+                          <textarea class="form-control" rows="3" Placeholder="Start typing here"></textarea>
+                        </div>
+                      </div>
+
+                      <!--Submit Button linked to bootstrap created JS function 'checkRequired()'-->
+                      <button type="submit" class="btn btn-primary" onclick="checkRequired()">Submit response</button>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="collapse multi-collapse" id="googleForm">
+                <div class="card card-body">
+                  <!--
+                    This is a google form created through... well google forms. 
+                    Google forms allows for direct linkage to a created form with 
+                    or without permission using an <iframe> tag.
+                  -->
+                  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsDpDHGGQKM0Rud2BBJNtXiC-xfiMQLQRGeZ7cA1790xwJ8Q/viewform?embedded=true" width="100%" height="2248" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    
+  </main>
+
+  <footer>
+    <div class="footer-info">
+      <div class="foot-1"><p>Logo Strip</p></div>
+      <div class="foot-2"><p>© 2022 Josh Ferkins</p></div>
+      <div class="foot-3"><a href="research.html">Privacy Policy</a></div>
+    </div>
+  </footer>
+
+  <!--Link HTML document to javascript-->
+  <script type="text/javascript" src="JS/javascript.js"></script>
+
+  <!--Link enabling bootstrap for the client-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+  -->
+
+</body>
+</html>
